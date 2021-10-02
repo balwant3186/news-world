@@ -17,8 +17,9 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.apiService.get('').subscribe(data => {
+    this.apiService.get('top-headlines?country=us').subscribe(data => {
       console.log('data', data)
+      this.international_news = data.articles
     }, err => console.log(err)
     )
   }

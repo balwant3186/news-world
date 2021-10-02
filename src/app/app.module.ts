@@ -5,6 +5,7 @@ import { HttpClientModule } from "@angular/common/http"
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { NewsComponent } from './shared/components/news/news.component';
+import { ApiService } from './api.service';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { NewsComponent } from './shared/components/news/news.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
