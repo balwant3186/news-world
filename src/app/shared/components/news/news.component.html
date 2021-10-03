@@ -31,8 +31,9 @@
   </div>
 </div> -->
 
+<h3 class="mt-3">{{ title }} News</h3>
 <div class="row g-4">
-  <div class="col-md-3" *ngFor="let news of data">
+  <div class="col-md-3" *ngFor="let news of data" (click)="goToNewsDetail(news)">
     <div class="card">
       <img [src]="news.urlToImage" class="card-img-top" alt="...">
       <div class="card-body">

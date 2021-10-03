@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+
+  <div class="loader" *ngIf="isLoading">
+    <div class="spinner-border text-info" role="status">
+      <span class="sr-only"></span>
+    </div>
+  </div>
+
+  <img class="img-fluid my-3" [src]="news_data.urlToImage" alt="">
+  <h3>{{ news_data.title}}</h3>
+  <p>{{ news_data.content }}</p>
+
+</div>
+

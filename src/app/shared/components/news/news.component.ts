@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../../../data.service';
 
 @Component({
   selector: 'app-news',
@@ -8,11 +10,20 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NewsComponent implements OnInit {
 
   @Input() data;
+  @Input() title;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private dataService: DataService
+  ) { }
+
+  goToNewsDetail (news) {
+    this.dataService.setData(news)
+    window.location.href = news.url
+    this.router.navigate(['/news-detail'])
+  }
 
   ngOnInit() {
-    console.log('arya', this.data)
   }
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +6,11 @@ import { ApiService } from './api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'app';
-  today_news = []
-  breaking_news = []
-  national_news = []
-  international_news = []
 
-  constructor (private apiService: ApiService) {
+  constructor () {
   }
 
-  ngOnInit() {
-    this.apiService.get('top-headlines?country=us').subscribe(data => {
-      console.log('data', data)
-      this.international_news = data.articles
-    }, err => console.log(err)
-    )
+  ngOnInit() { 
   }
-  
+
 }
